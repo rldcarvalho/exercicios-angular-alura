@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
-import { MainRoutingModule } from './main-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { CabecalhoComponent } from './componentes/cabecalho/cabecalho.component';
 import { RodapeComponent } from './componentes/rodape/rodape.component';
 import { CriarPensamentoComponent } from './componentes/pensamentos/criar-pensamento/criar-pensamento.component';
-import { FormsModule } from '@angular/forms';
 import { ListarPensamentosComponent } from './componentes/pensamentos/listar-pensamentos/listar-pensamentos.component';
 
 @NgModule({
@@ -21,8 +22,9 @@ import { ListarPensamentosComponent } from './componentes/pensamentos/listar-pen
   imports: [
     BrowserModule,
     CommonModule,
-    MainRoutingModule,
-    FormsModule
+    AppRoutingModule,
+    FormsModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
