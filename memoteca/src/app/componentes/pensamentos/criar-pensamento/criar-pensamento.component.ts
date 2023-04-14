@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Pensamento } from '../pensamento/pensamento';
+import { Pensamento } from '../pensamento';
 
 @Component({
   selector: 'app-criar-pensamento',
