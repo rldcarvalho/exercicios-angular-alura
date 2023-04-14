@@ -16,6 +16,6 @@ export class ListarPensamentosComponent {
       conteudo: 'Minha propriedade é decorada com @Input()',
       autoria: 'Componente filho',
       modelo: 'modelo2'
-    },
+    }
   ]
 }
