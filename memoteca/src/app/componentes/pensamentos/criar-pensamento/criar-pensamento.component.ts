@@ -17,16 +17,10 @@ export class CriarPensamentoComponent {
     private formBuilder: FormBuilder
   ){}
 
-  pensamento: Pensamento = {
-    conteudo: '',
-    autoria: '',
-    modelo: 'modelo1'
-  }
-
   formulario!: FormGroup;
 
   criarPensamento(){
-    this.service.criar(this.pensamento).subscribe(() => {
+    this.service.criar(this.formulario.value).subscribe(() => {
       this.router.navigate(['/listarPensamento'])
     })
   }
@@ -38,7 +32,7 @@ export class CriarPensamentoComponent {
   ngOnInit(): void{
     this.formulario = this.formBuilder.group({
       conteudo: ['Formulario Reativo'],
-      autoria: [''],
+      autoria: ['Angular'],
       modelo: ['modelo1']
 
     })
