@@ -32,6 +32,13 @@ export class CriarPensamentoComponent {
     this.router.navigate(['/listarPensamento'])
   }
 
+  habilitarBotao(): string{
+    if(this.formulario.valid){
+      return 'botao'
+    }
+    return 'botao__desabilitado'
+  }
+
   ngOnInit(): void{
     this.formulario = this.formBuilder.group({
       conteudo: ['', Validators.compose([
