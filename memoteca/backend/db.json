@@ -4,7 +4,8 @@
       "id": 1,
       "conteudo": "Que bom que vc veio",
       "autoria": "Nay",
-      "modelo": "modelo1"
+      "modelo": "modelo1",
+      "favorito": true
     },
     {
       "id": 2,
@@ -16,30 +17,35 @@
       "id": 3,
       "conteudo": "Angular é o melhor",
       "autoria": "Dev Alura",
-      "modelo": "modelo3"
+      "modelo": "modelo3",
+      "favorito": true
     },
     {
       "id": 4,
       "conteudo": "oieeeeeeeeeeee",
       "autoria": "olá",
-      "modelo": "modelo3"
+      "modelo": "modelo3",
+      "favorito": false
     },
     {
       "conteudo": "teste 1",
       "autoria": "teste",
       "modelo": "modelo2",
+      "favorito": false,
       "id": 5
     },
     {
       "conteudo": "teste 2",
       "autoria": "teste",
       "modelo": "modelo3",
+      "favorito": false,
       "id": 6
     },
     {
       "conteudo": "teste 3",
       "autoria": "teste",
       "modelo": "modelo1",
+      "favorito": false,
       "id": 7
     }
   ]
