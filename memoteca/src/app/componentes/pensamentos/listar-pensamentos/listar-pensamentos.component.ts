@@ -31,11 +31,18 @@ export class ListarPensamentosComponent {
   }
 
   pesquisarPensamentos() {
-
     this.haMaisPensamentos = true;
     this.paginaAtual = 1;
     this.service.listar(this.paginaAtual, this.filtro).subscribe(listaPensamentos => {
       this.listaPensamentos = listaPensamentos
+    })
+  }
+
+  listarFavoritos(){
+    this.haMaisPensamentos = true;
+    this.paginaAtual = 1;
+    this.service.listarPensamentosFavoritos(this.paginaAtual, this.filtro).subscribe(listaPensamentosFavoritos => {
+      this.listaPensamentos = listaPensamentosFavoritos
     })
   }
 }
