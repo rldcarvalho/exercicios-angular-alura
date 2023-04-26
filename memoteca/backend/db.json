@@ -31,7 +31,7 @@
       "conteudo": "teste 1",
       "autoria": "teste",
       "modelo": "modelo2",
-      "favorito": false,
+      "favorito": true,
       "id": 5
     },
     {
