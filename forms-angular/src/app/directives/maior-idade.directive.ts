@@ -23,8 +23,5 @@ export class MaiorIdadeDirective implements Validator {
 
     return ehMaior ? null : {'maiorIdadeValidator': true};
   }
-  registerOnValidatorChange?(fn: () => void): void {
-    throw new Error('Method not implemented.');
-  }
-
+  
 }
