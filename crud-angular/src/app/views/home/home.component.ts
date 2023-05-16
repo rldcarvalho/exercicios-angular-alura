@@ -54,7 +54,7 @@ export class HomeComponent {
           })
         }else{
           this.periodicElementService.createElement(result).subscribe((data: PeriodicElement) => {
-            this.dataSource.push(result);
+            this.dataSource.push(data);
             this.table.renderRows();
           })
         }
