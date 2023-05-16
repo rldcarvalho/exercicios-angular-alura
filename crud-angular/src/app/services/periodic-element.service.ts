@@ -21,4 +21,7 @@ export class PeriodicElementService {
     return this.http.post<PeriodicElement>(this.elementApiUrl, element)
   }
 
+  deleteElement(id: number): Observable<any> {
+    return this.http.delete<any>(`${this.elementApiUrl}/${id}`)
+  }
 }
