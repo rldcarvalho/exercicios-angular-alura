@@ -1,3 +1,4 @@
+//import { PeriodicElement } from './../../../models/PeriodicElement';
 import { Component, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTable } from '@angular/material/table';
@@ -58,10 +59,13 @@ export class HomeComponent {
       if(result !== undefined){
         if (this.dataSource.map(p => p.position).includes(result.position)){
           this.dataSource[result.position - 1] = result;
+          this.table.renderRows();
         }else{
-          this.dataSource.push(result);
+          this.periodicElementService.createElement(result).subscribe((data: PeriodicElement) => {
+            this.dataSource.push(result);
+            this.table.renderRows();
+          })
         }
-        this.table.renderRows();
       }
     });
   }

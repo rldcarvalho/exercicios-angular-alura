@@ -13,7 +13,12 @@ export class PeriodicElementService {
     private http: HttpClient
   ) { }
 
-    getElements(): Observable<PeriodicElement[]> {
-      return this.http.get<PeriodicElement[]>(this.elementApiUrl)
-    }
+  getElements(): Observable<PeriodicElement[]> {
+    return this.http.get<PeriodicElement[]>(this.elementApiUrl)
+  }
+
+  createElement(element: PeriodicElement): Observable<PeriodicElement> {
+    return this.http.post<PeriodicElement>(this.elementApiUrl, element)
+  }
+
 }
