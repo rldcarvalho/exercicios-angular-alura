@@ -37,6 +37,7 @@ export class HomeComponent {
         weight: null,
         symbol: ''
       } : {
+        id: element.id,
         position: element.position,
         name: element.name,
         weight: element.weight,
@@ -47,8 +48,10 @@ export class HomeComponent {
     dialogRef.afterClosed().subscribe(result => {
       if(result !== undefined){
         if (this.dataSource.map(p => p.position).includes(result.position)){
-          this.dataSource[result.position - 1] = result;
-          this.table.renderRows();
+          this.periodicElementService.editElement(result).subscribe((data: PeriodicElement) => {
+            this.dataSource[result.id - 1] = data;
+            this.table.renderRows();
+          })
         }else{
           this.periodicElementService.createElement(result).subscribe((data: PeriodicElement) => {
             this.dataSource.push(result);
