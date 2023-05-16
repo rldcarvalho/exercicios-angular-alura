@@ -47,9 +47,10 @@ export class HomeComponent {
 
     dialogRef.afterClosed().subscribe(result => {
       if(result !== undefined){
-        if (this.dataSource.map(p => p.position).includes(result.position)){
+        if (this.dataSource.map(p => p.id).includes(result.id)){
           this.periodicElementService.editElement(result).subscribe((data: PeriodicElement) => {
-            this.dataSource[result.id - 1] = data;
+            const index = this.dataSource.findIndex(p => p.id === data.id)
+            this.dataSource[index] = data;
             this.table.renderRows();
           })
         }else{
