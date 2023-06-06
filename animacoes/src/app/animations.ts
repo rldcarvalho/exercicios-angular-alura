@@ -1,4 +1,4 @@
-import { animate, group, keyframes, state, style, transition, trigger } from '@angular/animations';
+import { animate, group, keyframes, query, state, style, transition, trigger } from '@angular/animations';
 
 export const highlightStateTrigger = trigger('highlightState', [
     state('default', style({
@@ -87,17 +87,21 @@ export const flyInOutTrigger = trigger('flyInOutAnimation', [
 
 export const formButtonTrigger = trigger('formButton', [
   transition('invalid => valid', [
-    group([
-      animate('200ms', style({ backgroundColor: '#63b77c'})),
-      animate('100ms', style({ transform: 'scale(1.1)'})),
+    query('#botao-salvar', [
+      group([
+        animate('200ms', style({ backgroundColor: '#63b77c'})),
+        animate('100ms', style({ transform: 'scale(1.1)'})),
+      ]),
+      animate('200ms', style({ backgroundColor: 'scale(1.1)'})),
+      ])
     ]),
-    animate('200ms', style({ backgroundColor: 'scale(1.1)'})),
-  ]),
   transition('valid => invalid', [
-    group([
-      animate('200ms', style({ backgroundColor: '#6c757d'})),
-      animate('100ms', style({ transform: 'scale(1.1)'})),
-    ]),
-    animate('200ms', style({ backgroundColor: 'scale(1.1)'})),
+    query('#botao-salvar', [
+      group([
+        animate('200ms', style({ backgroundColor: '#6c757d'})),
+        animate('100ms', style({ transform: 'scale(1.1)'})),
+      ]),
+      animate('200ms', style({ backgroundColor: 'scale(1.1)'})),
+    ])
   ])
 ])
